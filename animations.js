@@ -157,3 +157,9 @@ function closeServiceModal() {
   serviceModal.classList.remove('active');
   document.body.style.overflow = '';
 }
+
+function toggleServiceCard(card) {
+  const wasExpanded = card.classList.contains('expanded');
+  document.querySelectorAll('.service-card-new.expanded').forEach(c => c.classList.remove('expanded'));
+  if (!wasExpanded) card.classList.add('expanded');
+}
