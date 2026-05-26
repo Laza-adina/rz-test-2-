@@ -62,7 +62,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.2;
   color: var(--brand-main);
 }
@@ -102,10 +102,10 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 11px 22px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border-radius: 4px;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 50px;
   cursor: pointer;
   text-decoration: none;
   transition: var(--transition-smooth);
@@ -116,7 +116,7 @@ h3 {
   color: #ffffff;
 }
 .btn-primary:hover {
-  background-color: rgba(1, 73, 124, 0.82);
+  background-color: var(--brand-main);
   transform: translateY(-2px);
 }
 .btn-outline-light {
@@ -276,11 +276,11 @@ h3 {
 .hero-left {
   position: relative;
   z-index: 2;
-  width: 55%;
+  width: 45%;
   display: flex;
   align-items: center;
   padding: 80px 0 80px 24px;
-  margin-left: 4%;
+  margin-left: 10%;
   clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
   background: var(--brand-main);
 }
@@ -342,16 +342,12 @@ h3 {
 @media (max-width: 767px) {
   .hero-section {
     flex-direction: column;
-    min-height: 480px;
-    position: relative;
+    min-height: auto;
   }
   .hero-left {
     width: 100%;
     clip-path: none;
-    padding: 60px 24px 60px;
-    background: transparent;
-    position: relative;
-    z-index: 2;
+    padding: 60px 24px 40px;
   }
   .hero-left-inner {
     padding-right: 0;
@@ -361,18 +357,10 @@ h3 {
     position: absolute;
     inset: 0;
     width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-  .hero-right video,
-  .hero-right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.55;
+    height: 260px;
   }
   .hero-right::after {
-    background: linear-gradient(to bottom, rgba(0,29,61,0.55) 0%, rgba(0,29,61,0.72) 100%);
+    background: none;
   }
 }
 
