@@ -1468,3 +1468,22 @@ h3 {
   font-style: italic;
   margin: 0;
 }
+.partner-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px; /* Force une hauteur fixe pour tous */
+  margin: 0 20px;
+}
+
+.partner-logo img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.partner-logo span {
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+}
