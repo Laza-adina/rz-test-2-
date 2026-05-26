@@ -109,3 +109,51 @@ window.addEventListener('scroll', () => {
     link.style.color = (link.getAttribute('href') || '').includes(current) && current ? 'var(--brand-main)' : '';
   });
 }, { passive: true });
+
+// ---- Service Modal ----
+const serviceData = {
+  volume: {
+    title: "Transport Volume",
+    icon: "fas fa-truck-moving",
+    img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+    desc: "Acheminement optimal de vos marchandises par camion de 20 m³ en lots sur palettes. Idéal pour la liaison inter-sites et les flux d'approvisionnement critiques. Nous assurons le chargement sécurisé, la traçabilité en temps réel et la ponctualité de chaque rotation. Nos véhicules sont équipés pour le transport de palettes Europe et industrielles, avec hayon élévateur disponible sur demande."
+  },
+  route: {
+    title: "Livraison Petite Route",
+    icon: "fas fa-shipping-fast",
+    img: "https://images.unsplash.com/photo-1516542008748-1d139d366f6a?auto=format&fit=crop&w=800&q=80",
+    desc: "Gestion externalisée de vos tournées quotidiennes en fourgon. Capacité opérationnelle élevée avec une moyenne rigoureuse de 70 livraisons par jour. Nos chauffeurs sont briefés sur vos procédures de livraison, de collecte de signatures et de gestion des échecs. Nous couvrons les zones urbaines et périurbaines avec une organisation de tournées optimisée pour minimiser les retards."
+  },
+  velo: {
+    title: "Livraison à Vélo",
+    icon: "fas fa-bicycle",
+    img: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=800&q=80",
+    desc: "Solutions du dernier kilomètre ultra-rapides et décarbonées pour petits colis. Agilité maximale au cœur des centres-villes denses. Zéro émission, zéro congestion : nos cyclistes naviguent là où les fourgons sont bloqués. Idéal pour les envois urgents, les flux e-commerce et les livraisons en immeubles de bureaux. Une solution écoresponsable qui améliore votre bilan carbone et l'image de marque de votre enseigne."
+  }
+};
+
+const serviceModal = document.getElementById('serviceModal');
+const serviceModalClose = document.getElementById('serviceModalClose');
+
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const key = card.dataset.service;
+    const data = serviceData[key];
+    document.getElementById('serviceModalImg').src = data.img;
+    document.getElementById('serviceModalImg').alt = data.title;
+    document.getElementById('serviceModalIcon').className = data.icon;
+    document.getElementById('serviceModalTitle').textContent = data.title;
+    document.getElementById('serviceModalDesc').textContent = data.desc;
+    serviceModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+serviceModalClose.addEventListener('click', closeServiceModal);
+serviceModal.addEventListener('click', e => { if (e.target === serviceModal) closeServiceModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeServiceModal(); });
+
+function closeServiceModal() {
+  serviceModal.classList.remove('active');
+  document.body.style.overflow = '';
+}

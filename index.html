@@ -14,7 +14,7 @@
 <body>
 
     <header class="main-header">
-        <div class="container header-container">
+        <div class=" header-container">
             <a href="index.html" class="logo"><img src="logo.png" alt="RZ TRANSPORT"></span></a>
             <button class="menu-toggle" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button>
             <nav class="main-nav">
@@ -29,6 +29,7 @@
                     <a href="candidature.html" class="nav-link btn-nav-primary">Devenir Livreurs</a>
                 </div>
             </nav>
+          
         </div>
     </header>
 
@@ -64,37 +65,40 @@
                 <p class="section-subtitle">Une expertise sectorielle adaptée à l'ensemble de vos flux de distribution.</p>
             </div>
             <div class="grid-3">
-                <div class="card service-card reveal">
+                <div class="card service-card reveal" data-service="volume">
                     <div class="card-img-holder">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Transport Volume 20m3">
+                      <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" alt="Transport Volume 20m3">
                     </div>
                     <div class="card-body">
                         <div class="service-icon-box"><i class="fas fa-truck-moving"></i></div>
                         <h3>Transport Volume</h3>
                         <p>Acheminement optimal de vos marchandises par camion de 20 m³ en lots sur palettes. Idéal pour la liaison inter-sites et les flux d'approvisionnement critiques.</p>
                     </div>
-                </div>
-                <div class="card service-card reveal">
+                  </div>
+                  
+                  <div class="card service-card reveal" data-service="route">
                     <div class="card-img-holder">
-                        <img src="https://images.unsplash.com/photo-1516542008748-1d139d366f6a?auto=format&fit=crop&w=600&q=80" alt="Livraison Petite Route">
+                      <img src="https://images.unsplash.com/photo-1516542008748-1d139d366f6a?auto=format&fit=crop&w=600&q=80" alt="Livraison Petite Route">
                     </div>
                     <div class="card-body">
                         <div class="service-icon-box"><i class="fas fa-shipping-fast"></i></div>
                         <h3>Livraison Petite Route</h3>
                         <p>Gestion externalisée de vos tournées quotidiennes en fourgon. Capacité opérationnelle élevée avec une moyenne rigoureuse de 70 livraisons par jour.</p>
+                        <a href="#contact" class="card-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </div>
-                <div class="card service-card reveal">
+                  </div>
+                  
+                  <div class="card service-card reveal" data-service="velo">
                     <div class="card-img-holder">
-                        <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=600&q=80" alt="Livraison à vélo">
+                      <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=600&q=80" alt="Livraison à vélo">
                     </div>
                     <div class="card-body">
                         <div class="service-icon-box"><i class="fas fa-bicycle"></i></div>
                         <h3>Livraison à Vélo</h3>
                         <p>Solutions du dernier kilomètre ultra-rapides et décarbonées pour petits colis. Agilité maximale au cœur des centres-villes denses.</p>
+                        <a href="#contact" class="card-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
                     </div>
-                </div>
-            </div>
+                  </div>            </div>
         </div>
     </section>
 
@@ -271,5 +275,18 @@
     </div>
 
     <script src="animations.js"></script>
+
+    <div id="serviceModal" class="service-modal-overlay">
+  <div class="service-modal-card">
+    <button class="service-modal-close" id="serviceModalClose"><i class="fas fa-times"></i></button>
+    <img id="serviceModalImg" class="service-modal-img" src="" alt="">
+    <div class="service-modal-body">
+      <div class="service-modal-icon"><i id="serviceModalIcon"></i></div>
+      <h3 id="serviceModalTitle"></h3>
+      <p id="serviceModalDesc"></p>
+      <a href="#contact" class="btn btn-primary" id="serviceModalCta" onclick="document.getElementById('serviceModal').classList.remove('active')">Nous contacter</a>
+    </div>
+  </div>
+</div>
 </body>
 </html>
