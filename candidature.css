@@ -1,0 +1,311 @@
+/* ============================================================
+   RZ TRANSPORT — Candidature Page Styles
+   ============================================================ */
+
+   .page-candidature { background: var(--white); }
+
+   /* ===== HERO CANDIDATURE ===== */
+   .cand-hero {
+     position: relative;
+     min-height: 60vh;
+     display: flex;
+     align-items: center;
+     overflow: hidden;
+   }
+   .cand-hero-bg {
+     position: absolute;
+     inset: 0;
+   }
+   .cand-hero-bg img {
+     width: 100%; height: 100%;
+     object-fit: cover;
+     object-position: center;
+   }
+   .cand-hero-overlay {
+     position: absolute;
+     inset: 0;
+     background: linear-gradient(135deg, rgba(25,25,25,0.92) 0%, rgba(25,25,25,0.65) 100%);
+   }
+   .cand-hero-content {
+     position: relative;
+     z-index: 1;
+     padding: 140px 24px 80px;
+     max-width: 640px;
+   }
+   .cand-hero-title {
+     font-family: var(--font-display);
+     font-size: clamp(2.4rem, 5vw, 4rem);
+     font-weight: 800;
+     color: var(--white);
+     line-height: 1.1;
+     letter-spacing: -0.02em;
+     margin: 16px 0 20px;
+   }
+   .cand-hero-sub {
+     font-size: 1.05rem;
+     color: rgba(255,255,255,0.72);
+     margin-bottom: 36px;
+     line-height: 1.7;
+   }
+   
+   /* ===== WHY GRID ===== */
+   .cand-why { background: var(--white); }
+   .why-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 28px;
+   }
+   .why-card {
+     background: var(--white);
+     border: 1.5px solid var(--alabaster-grey);
+     border-radius: var(--radius-lg);
+     padding: 0 0 28px;
+     overflow: hidden;
+     transition: var(--transition);
+   }
+   .why-card:hover {
+     border-color: transparent;
+     box-shadow: var(--shadow-md);
+     transform: translateY(-6px);
+   }
+   .why-img {
+     height: 160px;
+     overflow: hidden;
+     margin-bottom: 24px;
+     position: relative;
+   }
+   .why-img img {
+     width: 100%; height: 100%;
+     object-fit: cover;
+     transition: var(--transition);
+   }
+   .why-card:hover .why-img img { transform: scale(1.05); }
+   .why-icon {
+     width: 52px; height: 52px;
+     background: rgba(241,80,37,0.08);
+     border-radius: 12px;
+     display: flex; align-items: center; justify-content: center;
+     margin: 0 28px 16px;
+   }
+   .why-card h3 {
+     font-family: var(--font-display);
+     font-size: 1.05rem; font-weight: 700;
+     margin: 0 28px 10px;
+   }
+   .why-card p {
+     font-size: 0.875rem; color: #666;
+     line-height: 1.65;
+     margin: 0 28px;
+   }
+   
+   /* ===== PROFILS ===== */
+   .cand-profils { background: var(--alabaster-grey); }
+   .profils-inner {
+     display: grid;
+     grid-template-columns: 1fr 1.2fr;
+     gap: 80px;
+     align-items: start;
+   }
+   .profil-items { margin-top: 32px; display: flex; flex-direction: column; gap: 14px; }
+   .profil-item {
+     display: flex; align-items: center; gap: 14px;
+     font-size: 0.95rem; font-weight: 500;
+     color: var(--carbon-black);
+     background: var(--white);
+     padding: 14px 18px;
+     border-radius: var(--radius);
+     border: 1.5px solid var(--dust-grey);
+     transition: var(--transition);
+   }
+   .profil-item:hover {
+     border-color: var(--blazing-flame);
+     background: rgba(241,80,37,0.03);
+     transform: translateX(6px);
+   }
+   
+   .vehicle-cards { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+   .vehicle-card {
+     background: var(--white);
+     border-radius: var(--radius);
+     border: 1.5px solid var(--dust-grey);
+     padding: 20px 24px;
+     display: flex; align-items: center; gap: 20px;
+     transition: var(--transition);
+   }
+   .vehicle-card:hover { border-color: var(--blazing-flame); box-shadow: var(--shadow); transform: translateX(6px); }
+   .vc-icon {
+     width: 64px; height: 64px;
+     background: rgba(241,80,37,0.06);
+     border-radius: 14px;
+     display: flex; align-items: center; justify-content: center;
+     flex-shrink: 0;
+   }
+   .vehicle-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+   .vehicle-card p { font-size: 0.82rem; color: #666; line-height: 1.5; margin-bottom: 8px; }
+   .vc-badge {
+     display: inline-block;
+     background: rgba(241,80,37,0.1);
+     color: var(--blazing-flame);
+     font-size: 0.7rem;
+     font-weight: 700;
+     text-transform: uppercase;
+     letter-spacing: 0.08em;
+     padding: 3px 10px;
+     border-radius: 100px;
+   }
+   
+   .chiffres-cand {
+     display: flex;
+     gap: 0;
+     background: var(--carbon-black);
+     border-radius: var(--radius);
+     overflow: hidden;
+   }
+   .chiffre {
+     flex: 1;
+     padding: 24px;
+     text-align: center;
+     border-right: 1px solid rgba(255,255,255,0.08);
+   }
+   .chiffre:last-child { border-right: none; }
+   .chiffre strong {
+     display: block;
+     font-family: var(--font-display);
+     font-size: 1.6rem; font-weight: 800;
+     color: var(--blazing-flame);
+     margin-bottom: 4px;
+   }
+   .chiffre span { font-size: 0.72rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; }
+   
+   /* ===== PROCESS ===== */
+   .cand-process { background: var(--white); }
+   .process-steps {
+     display: flex;
+     align-items: center;
+     gap: 0;
+     flex-wrap: wrap;
+   }
+   .process-step {
+     flex: 1; min-width: 180px;
+     background: var(--alabaster-grey);
+     border-radius: var(--radius);
+     padding: 32px 24px;
+     text-align: center;
+     transition: var(--transition);
+     border: 1.5px solid transparent;
+   }
+   .process-step:hover { border-color: var(--blazing-flame); background: var(--white); box-shadow: var(--shadow); }
+   .step-num {
+     font-family: var(--font-display);
+     font-size: 2.4rem; font-weight: 800;
+     color: var(--blazing-flame);
+     opacity: 0.25;
+     margin-bottom: 12px;
+     line-height: 1;
+   }
+   .process-step h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; }
+   .process-step p { font-size: 0.82rem; color: #666; line-height: 1.6; }
+   .process-arrow {
+     font-size: 1.5rem; color: var(--dust-grey);
+     padding: 0 8px;
+     flex-shrink: 0;
+   }
+   
+   /* ===== FORMULAIRE CANDIDATURE ===== */
+   .cand-form-section { background: var(--alabaster-grey); }
+   .cand-form-inner {
+     display: grid;
+     grid-template-columns: 1fr 1.3fr;
+     gap: 80px;
+     align-items: start;
+   }
+   
+   .cand-reassure { margin: 32px 0 40px; display: flex; flex-direction: column; gap: 12px; }
+   .reassure-item {
+     display: flex; align-items: center; gap: 10px;
+     font-size: 0.9rem; font-weight: 500;
+     color: var(--carbon-black);
+   }
+   .cand-team-img {
+     border-radius: var(--radius-lg);
+     overflow: hidden;
+     height: 220px;
+   }
+   .cand-team-img img { width: 100%; height: 100%; object-fit: cover; }
+   
+   .candidature-form {
+     background: var(--white);
+     border-radius: var(--radius-lg);
+     padding: 40px;
+     box-shadow: var(--shadow);
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+   }
+   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+   
+   /* File Upload */
+   .file-upload-wrap { position: relative; }
+   .file-upload-wrap input[type="file"] {
+     position: absolute; inset: 0;
+     opacity: 0; cursor: pointer; z-index: 2;
+     width: 100%; height: 100%;
+   }
+   .file-upload-ui {
+     display: flex; align-items: center; gap: 16px;
+     border: 2px dashed var(--dust-grey);
+     border-radius: var(--radius);
+     padding: 20px;
+     transition: var(--transition);
+     cursor: pointer;
+   }
+   .file-upload-wrap:hover .file-upload-ui,
+   .file-upload-wrap.has-file .file-upload-ui { border-color: var(--blazing-flame); background: rgba(241,80,37,0.04); }
+   .file-label { display: block; font-size: 0.875rem; font-weight: 500; color: var(--carbon-black); margin-bottom: 4px; }
+   .file-label u { color: var(--blazing-flame); }
+   .file-hint { font-size: 0.75rem; color: #999; }
+   .file-selected { font-size: 0.82rem; color: var(--blazing-flame); font-weight: 600; margin-top: 8px; }
+   
+   /* Checkbox */
+   .form-check .checkbox-label {
+     display: flex; align-items: flex-start; gap: 12px;
+     font-size: 0.85rem; color: #555; cursor: pointer; line-height: 1.5;
+   }
+   .form-check input[type="checkbox"] { display: none; }
+   .custom-check {
+     width: 20px; height: 20px; border-radius: 5px;
+     border: 2px solid var(--dust-grey);
+     display: flex; align-items: center; justify-content: center;
+     flex-shrink: 0; margin-top: 1px;
+     transition: var(--transition);
+   }
+   .form-check input[type="checkbox"]:checked + .custom-check {
+     background: var(--blazing-flame);
+     border-color: var(--blazing-flame);
+   }
+   .form-check input[type="checkbox"]:checked + .custom-check::after {
+     content: '';
+     width: 5px; height: 9px;
+     border-right: 2px solid white;
+     border-bottom: 2px solid white;
+     transform: rotate(45deg) translate(-1px,-1px);
+   }
+   .form-check a { color: var(--blazing-flame); text-decoration: underline; }
+   
+   .btn-cand { margin-top: 8px; }
+   
+   /* ===== RESPONSIVE CANDIDATURE ===== */
+   @media (max-width: 1024px) {
+     .why-grid { grid-template-columns: 1fr 1fr; }
+     .profils-inner { grid-template-columns: 1fr; gap: 48px; }
+     .cand-form-inner { grid-template-columns: 1fr; gap: 48px; }
+   }
+   @media (max-width: 768px) {
+     .why-grid { grid-template-columns: 1fr; }
+     .process-steps { flex-direction: column; gap: 12px; }
+     .process-arrow { transform: rotate(90deg); }
+     .form-row { grid-template-columns: 1fr; }
+     .candidature-form { padding: 24px; }
+     .chiffres-cand { flex-direction: column; }
+     .chiffre { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+   }
