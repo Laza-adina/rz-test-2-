@@ -200,11 +200,10 @@ h3 {
   flex-direction: column;
   position: absolute;
   top: 100%;
-  gap: 20%;
   left: 0;
   width: 100%;
   background: #ffffff;
-  padding: auto;
+  padding: 16px 5% 24px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   gap: 16px;
   align-items: stretch;
@@ -215,12 +214,23 @@ h3 {
 }
 
 .nav-links {
-  padding-left: 5%;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: stretch;
   text-align: center;
+}
+
+.bouton {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+.bouton .nav-link {
+  display: block;
+  width: 100%;
 }
 
 .nav-link {
@@ -1025,8 +1035,12 @@ h3 {
 
   .bouton {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 12px;
+  }
+  .bouton .nav-link {
+    width: auto;
   }
 
   .hero-left {
